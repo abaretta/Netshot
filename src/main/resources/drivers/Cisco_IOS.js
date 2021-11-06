@@ -345,6 +345,10 @@ function snapshot(cli, device, config) {
 		else if (system.match(/cisco ISR44\d\d/)) {
 			device.set("family", "Cisco ISR 4400");
 		}
+		else if (system.match(/cisco IE-\d\d\d\d/)) {
+			device.set("family", "Cisco Catalyst Rugged");
+			device.set("networkClass", "SWITCH");
+		}
 		else if (system.match(/.*WS-C4[59].*/)) {
 			device.set("family", "Cisco Catalyst 4500");
 			device.set("networkClass", "SWITCH");
