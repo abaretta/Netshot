@@ -244,7 +244,7 @@ function snapshot(cli, device, config) {
 			device.set("location", location[1]);
 		}
 	}
-	var peerPattern = /^(Master|Slave) *: (.+?) *, +([A-Z0-9]+)(, HA cluster index = [0-9]|, cluster index = [0-9])*$/gm;
+	var peerPattern = /^(Master|Slave|Primary|Secondary) *: (.+?) *, +([A-Z0-9]+)(, HA cluster index = [0-9]|, cluster index = [0-9])*$/gm;
 	var match;
 	while (match = peerPattern.exec(getHa)) {
 		if (match[2] != hostname) {
