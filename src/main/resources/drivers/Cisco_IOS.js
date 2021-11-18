@@ -449,7 +449,7 @@ function snapshot(cli, device, config) {
 				serialNumber: match[5]
 			};
 			device.add("module", module);
-                        if (module.slot.match(/^1$/) || module.slot.match(/Chassis/)) {			
+                        if (module.slot.match(/^1$/) || module.slot.match(/^Switch 1$/) || module.slot.match(/[Cc]hassis/)) {			
 				device.set("serialNumber", module.serialNumber);
 			}
 		}
