@@ -309,6 +309,7 @@ function snapshot(cli, device, config) {
 
 	var removeChangingParts = function(text) {
 		var cleaned = text;
+		cleaned = cleaned.replace(/^#conf_file_ver=.*$/mg, "");
 		cleaned = cleaned.replace(/^ *set (passphrase|password|passwd) ENC .*$/mg, "");
 		cleaned = cleaned.replace(/^ *set private-key "(.|[\r\n])*?"$/mg, "");
 		return cleaned;
